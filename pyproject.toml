@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "railclass"
+version = "1.0.0"
+description = "Income growth and the changing class composition of Indian Railways, 2015-16 to 2024-25"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Vidhi Kant Gupta" },
+  { name = "Vimalraj K" },
+  { name = "Manikanda Sakthi Subramaniam" },
+  { name = "Onkar Shamsunder Biyani" },
+]
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.1",
+  "statsmodels>=0.14",
+  "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+railclass = "railclass.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/railclass"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["reference"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "NPY", "PD002"]
+ignore = ["E741"]
