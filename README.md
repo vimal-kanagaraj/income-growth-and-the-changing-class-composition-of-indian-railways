@@ -1,8 +1,8 @@
-# railclass
+# Income Growth and the Changing Class Composition of Indian Railways
 
 Analysis code for the DA241O Managerial Economics term paper
 **"Income Growth and the Changing Class Composition of Indian Railways, 2015-16 to 2024-25"**
-(The Cartel, Group 1).
+(The Cartel, Group 1). The Python package is named `railclass`.
 
 This repository is where the paper's analysis was developed. It builds the class-by-year
 panel from the Union Budget railway statements, estimates the models, and generates the
